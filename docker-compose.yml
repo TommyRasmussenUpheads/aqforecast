@@ -1,0 +1,22 @@
+services:
+  aqforecast:
+    build: .
+    container_name: aqforecast
+    restart: unless-stopped
+    ports:
+      - "3013:3000"
+    environment:
+      - DB_HOST=forente_planeter_db
+      - DB_PASSWORD=BadeBall2009
+    networks:
+      - aqforecast_net
+      - skydotten_db_net
+      - nginx-proxy-manager_default
+
+networks:
+  aqforecast_net:
+    driver: bridge
+  skydotten_db_net:
+    external: true
+  nginx-proxy-manager_default:
+    external: true
