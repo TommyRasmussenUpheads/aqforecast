@@ -5,7 +5,7 @@ const pool = new Pool({
   port: 5432,
   database: 'aqforecast',
   user: 'aqforecast',
-  password: process.env.DB_PASSWORD || 'BadeBall2009'
+  password: process.env.DB_PASSWORD
 });
 
 async function initDb() {
