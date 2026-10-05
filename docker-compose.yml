@@ -7,7 +7,7 @@ services:
       - "3013:3000"
     environment:
       - DB_HOST=forente_planeter_db
-      - DB_PASSWORD=BadeBall2009
+      - DB_PASSWORD=${DB_PASSWORD:?DB_PASSWORD mangler i .env}
     networks:
       - aqforecast_net
       - skydotten_db_net
