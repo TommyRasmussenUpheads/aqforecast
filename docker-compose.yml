@@ -3,8 +3,6 @@ services:
     build: .
     container_name: aqforecast
     restart: unless-stopped
-    ports:
-      - "3013:3000"
     environment:
       - DB_HOST=forente_planeter_db
       - DB_PASSWORD=${DB_PASSWORD:?DB_PASSWORD mangler i .env}
